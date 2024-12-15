@@ -73,6 +73,7 @@ def bar(contributions, feature_names,  max_display=10, show=True, title=None, fo
 
     xlen = pl.xlim()[1] - pl.xlim()[0]
     fig = pl.gcf()
+    fig.set_size_inches(6, 3)
     ax = pl.gca()
     #xticks = ax.get_xticks()
     bbox = ax.get_window_extent().transformed(fig.dpi_scale_trans.inverted())
@@ -113,7 +114,8 @@ def bar(contributions, feature_names,  max_display=10, show=True, title=None, fo
         pl.gca().set_xlim(xmin - (xmax-xmin)*0.1, xmax + (xmax-xmin)*0.1)
     else:
         pl.gca().set_xlim(xmin, xmax + (xmax-xmin)*0.1)
-    
+
+
     pl.xlabel(xlabel, fontsize=fontsize)
     if title:
         pl.title(title, fontsize=fontsize)
